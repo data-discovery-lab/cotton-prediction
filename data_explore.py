@@ -54,6 +54,17 @@ class data_explore(object):
             yld_stack_df.rename(columns={'level_0': 'FID', 'level_1': 'time', 0: 'value'}, inplace=True)
             yld_final = pd.merge(yld_stack_df, df[['FID', 'FIELD']], on='FID', how='left')
             return yld_final
+        elif self.type == 'yield-time':
+            yld = df[self.yld_cols]
+            yld_stack = yld.stack()
+            yld_stack_df = pd.DataFrame(yld_stack).reset_index()
+            yld_stack_df.rename(columns={'level_0': 'FID', 'level_1': 'time', 0: 'value'}, inplace=True)
+            yld_final = pd.merge(yld_stack_df, df[['FID', 'FIELD']], on='FID', how='left')
+            yld_final_no_avg = yld_final[yld_final['time'] != 'AVGYLD']
+            yld_final_no_avg['year'] = yld_final_no_avg['time'].apply(lambda r: pd.to_datetime('20' + r[3:]).year)
+            yld_final_no_avg_by_month = yld_final_no_avg.groupby(['FIELD', 'year']).value.mean()
+            yld_final_no_avg_by_month = pd.DataFrame(yld_final_no_avg_by_month).reset_index()
+            return yld_final_no_avg_by_month
         else:
             return df
 
@@ -99,6 +110,12 @@ class data_explore(object):
                       loc="right", ncol=3, frameon=True)
             fig = sns_plot.get_figure()
             fig.savefig("yield-stripplot")
+        elif self.type == 'yield-time':
+            g = sns.FacetGrid(df, col="FIELD", hue='FIELD', palette=sns.color_palette(self.colors),
+                              margin_titles=True)
+            sns_plot = g.map(plt.scatter, "year", 'value')
+            sns_plot = g.map(plt.plot, "year", 'value')
+            sns_plot.savefig("yield-time")
         elif self.type == 'heatmap-corr':
             sns.set(style="white")
 
@@ -120,6 +137,7 @@ class data_explore(object):
                         square=True, linewidths=.5, cbar_kws={"shrink": .5})
             fig = sns_plot.get_figure()
             fig.savefig("heatmap-corr")
+
 
 
     def time_convert(self, r):

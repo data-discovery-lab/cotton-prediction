@@ -41,6 +41,7 @@ You can find type_of_chart in the next sections here.
 | band-bar | create band bar based on band |
 | yield-scatter | create yield scatter based on yield |
 | yield-stripplot | create yield stripplot based on yield |
+| yield-time | create yield timeseries based on yield |
 | heatmap-corr  | create heatmap correlation based on all useful features |
 
 
