@@ -2,3 +2,6 @@ The implemntation is copied from:
 
 https://sthalles.github.io/semi-supervised-learning-with-gans/
 
+This relies on the paper supervised by Ian Goodfellow (creator of GAN):
+
+https://arxiv.org/abs/1606.03498
