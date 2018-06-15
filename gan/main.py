@@ -150,6 +150,7 @@ dataset = Dataset(trainset, testset)
 
 batch_size = 128
 epochs = 25
+epochs = 2
 train_accuracies, test_accuracies, samples = train(net,
                                                    dataset,
                                                    epochs,
