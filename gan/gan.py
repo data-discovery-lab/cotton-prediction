@@ -16,20 +16,20 @@ class GAN:
         tf.reset_default_graph()
 
         self.learning_rate = tf.Variable(learning_rate, trainable=False)
-        inputs = self.model_inputs(real_size, z_size)
+        inputs = self._model_inputs(real_size, z_size)
         self.input_real, self.input_z, self.y, self.label_mask = inputs
         self.drop_rate = tf.placeholder_with_default(.5, (), "drop_rate")
 
-        loss_results = self.model_loss(self.input_real, self.input_z,
+        loss_results = self._model_loss(self.input_real, self.input_z,
                                   real_size[2], self.y, num_classes,
                                   label_mask=self.label_mask,
-                                  alpha=0.2,
+                                  alpha=alpha,
                                   drop_rate=self.drop_rate)
         self.d_loss, self.g_loss, self.correct, self.masked_correct, self.samples = loss_results
 
-        self.d_opt, self.g_opt, self.shrink_lr = self.model_opt(self.d_loss, self.g_loss, self.learning_rate, beta1)
+        self.d_opt, self.g_opt, self.shrink_lr = self._model_opt(self.d_loss, self.g_loss, self.learning_rate, beta1)
 
-    def model_inputs(self, real_dim, z_dim):
+    def _model_inputs(self, real_dim, z_dim):
         # placeholder for inputing the real images from the training set to the discriminator
         inputs_real = tf.placeholder(tf.float32, (None, *real_dim), name='input_real')
 
@@ -45,7 +45,7 @@ class GAN:
 
         return inputs_real, inputs_z, y, label_mask
 
-    def model_opt(self, d_loss, g_loss, learning_rate, beta1):
+    def _model_opt(self, d_loss, g_loss, learning_rate, beta1):
         """
         Get optimization operations
         :param d_loss: Discriminator loss Tensor
@@ -70,7 +70,7 @@ class GAN:
 
         return d_train_opt, g_train_opt, shrink_lr
 
-    def model_loss(self, input_real, input_z, output_dim, y, num_classes, label_mask, alpha=0.2, drop_rate=0., smooth=0.1):
+    def _model_loss(self, input_real, input_z, output_dim, y, num_classes, label_mask, alpha=0.2, drop_rate=0., smooth=0.1):
         """
         Get the loss for the discriminator and generator
         :param input_real: Images from the real dataset
