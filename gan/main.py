@@ -127,7 +127,9 @@ def train(net, dataset, epochs, batch_size, figsize=(5, 5)):
                 feed_dict={net.input_z: sample_z})
             samples.append(gen_samples)
             _ = view_samples(-1, samples, 5, 10, figsize=figsize)
-            plt.show()
+            # plt.show()
+            plt.savefig('output/my_fig.png')
+
 
             # Save history of accuracies to view after training
             train_accuracies.append(train_accuracy)

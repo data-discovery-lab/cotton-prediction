@@ -4,3 +4,4 @@ gan/__pycache__/
 gan/data
 gan/checkpoints/
 gan/samples.pkl
+gan/output/
