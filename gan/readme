@@ -1,0 +1,12 @@
+The implemntation is copied from:
+
+https://sthalles.github.io/semi-supervised-learning-with-gans/
+
+iPython version
+
+https://github.com/sthalles/blog-resources/blob/master/semi-supervised/semi-supervised_learning.ipynb
+
+
+This relies on the paper supervised by Ian Goodfellow (creator of GAN):
+
+https://arxiv.org/abs/1606.03498

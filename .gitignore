@@ -1,1 +1,7 @@
-Data_28_F29.txt
+Data_28_F29.txt.idea/
+.idea/
+gan/__pycache__/
+gan/data
+gan/checkpoints/
+gan/samples.pkl
+gan/output/
