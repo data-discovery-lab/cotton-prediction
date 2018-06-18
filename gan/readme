@@ -6,7 +6,9 @@ iPython version
 
 https://github.com/sthalles/blog-resources/blob/master/semi-supervised/semi-supervised_learning.ipynb
 
-
 This relies on the paper supervised by Ian Goodfellow (creator of GAN):
 
 https://arxiv.org/abs/1606.03498
+
+Step 1: Run run.py to download the dataset.
+Step 2: run main.py to train the network
