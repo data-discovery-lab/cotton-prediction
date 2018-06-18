@@ -16,8 +16,7 @@ class GAN:
         tf.reset_default_graph()
 
         self.learning_rate = tf.Variable(learning_rate, trainable=False)
-        inputs = self._model_inputs(real_size, z_size)
-        self.input_real, self.input_z, self.y, self.label_mask = inputs
+        self.input_real, self.input_z, self.y, self.label_mask = self._model_inputs(real_size, z_size)
         self.drop_rate = tf.placeholder_with_default(.5, (), "drop_rate")
 
         loss_results = self._model_loss(self.input_real, self.input_z,
