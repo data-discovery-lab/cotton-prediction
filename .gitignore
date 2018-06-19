@@ -5,3 +5,4 @@ gan/data
 gan/checkpoints/
 gan/samples.pkl
 gan/output/
+Data_28_F29.txt
