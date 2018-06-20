@@ -5,3 +5,9 @@ gan/data
 gan/checkpoints/
 gan/samples.pkl
 gan/output/
+attgan/assests/
+attgan/dataset/
+attgan/__pycache__/
+attgan/logs/
+attgan/ops.pyc
+attgan/SAGAN.pyc
