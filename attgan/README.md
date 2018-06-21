@@ -1,6 +1,8 @@
 # Self-Attention-GAN-Tensorflow
 Simple Tensorflow implementation of ["Self-Attention Generative Adversarial Networks" (SAGAN)](https://arxiv.org/pdf/1805.08318.pdf)
 
+## Related paper about attention GAN
+https://arxiv.org/abs/1711.10485
 
 ## Requirements
 * Tensorflow 1.8
