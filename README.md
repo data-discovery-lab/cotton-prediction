@@ -45,3 +45,19 @@ You can find type_of_chart in the next sections here.
 | heatmap-corr  | create heatmap correlation based on all useful features |
 
 
+### measures for performance
+
+| Model | accuracy | f1_weighted | precision_weighted | recall_weighted |
+| ------ | ------ | ------ | ------ | ------ |
+| Decision_Tree_00 | 0.85741 | 0.85348 | 0.87030 | 0.85741 | 
+| Decision_Tree_01 | 0.82783 | 0.80221 | 0.80247 | 0.82783 |
+| Decision_Tree_02 | 0.86165 | 0.86258 | 0.88478 | 0.86165 |
+| Decision_Tree_03 | 0.86771 | 0.86284 | 0.88183 | 0.86771 |
+| Support_Vector_Machines_00 | 0.84194 | 0.83528 | 0.88119 | 0.84194 | 
+| Support_Vector_Machines_01 | 0.85976 | 0.85363 | 0.87554 | 0.85976 | 
+| Support_Vector_Machines_02 | 0.96691 | 0.96652 | 0.97015 | 0.96691 | 
+| Support_Vector_Machines_03 | 0.86130 | 0.85504 | 0.87531 | 0.86130 | 
+| Logistic_Regression_00 | 0.52740 | 0.47327 | 0.51095 | 0.52737 |  
+| Logistic_Regression_01 | 0.70625 | 0.67722 | 0.66970 | 0.70524 | 
+| Logistic_Regression_02 | 0.49147 | 0.47439 | 0.51728 | 0.49249 | 
+| Logistic_Regression_03 | 0.50047 | 0.46138 | 0.45757 | 0.50149 | 
