@@ -61,3 +61,7 @@ You can find type_of_chart in the next sections here.
 | Logistic_Regression_01 | 0.70625 | 0.67722 | 0.66970 | 0.70524 | 
 | Logistic_Regression_02 | 0.49147 | 0.47439 | 0.51728 | 0.49249 | 
 | Logistic_Regression_03 | 0.50047 | 0.46138 | 0.45757 | 0.50149 | 
+| K_Nearest_Neighbors_00 | 0.27424 | 0.26853 | 0.29323 | 0.27424 | 
+| K_Nearest_Neighbors_01 | 0.35727 | 0.31316 | 0.34434 | 0.35727 | 
+| K_Nearest_Neighbors_02 | 0.34381 | 0.33723 | 0.36319 | 0.34381 | 
+| K_Nearest_Neighbors_03 | 0.26551 | 0.25672 | 0.26872 | 0.26551 | 
