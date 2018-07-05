@@ -47,6 +47,60 @@ You can find type_of_chart in the next sections here.
 
 ### measures for performance
 
+#### dimension: Band Data
+| Model | mae | mse | rmse | 
+| ------ | ------ | ------ | ------ | 
+| Decision Tree | 160.59 | 39497.38 | 198.739478 | 
+| SVM | 152.13 | 35730.77 | 189.025845 | 
+| Random Forest | 163.33 | 39257.95 | 198.136191 |
+| XGBoost | 157.42 | 37623.34 | 193.967368 |
+| Linear Regression | 163.21 | 39662.45 | 199.154337 |
+
+#### dimension: Soil Data
+| Model | mae | mse | rmse | 
+| ------ | ------ | ------ | ------ | 
+| Decision Tree | 154.96 | 37585.53 | 193.869879 | 
+| SVM | 131.15 | 26678.18 | 163.334565 | 
+| Random Forest | 151.37 | 34650.81 | 186.147280 |
+| XGBoost | 147.10 | 33261.91 | 182.378480 |
+| Linear Regression | 201.11 | 64582.77 | 254.131403 |
+
+#### dimension: ndvi Data
+| Model | mae | mse | rmse | 
+| ------ | ------ | ------ | ------ | 
+| Decision Tree | 124.34 | 23983.26 | 154.865296 | 
+| SVM | 111.04 | 19822.83 | 140.793572 | 
+| Random Forest | 113.57 | 20401.07 | 142.832314 |
+| XGBoost | 113.02 | 20522.64 | 143.257251 |
+| Linear Regression | 123.85 | 24221.64 | 155.633030 |
+
+#### dimension: Combined Data
+| Model | mae | mse | rmse | 
+| ------ | ------ | ------ | ------ | 
+| Decision Tree | 123.24 | 24416.46 | 156.257672 | 
+| SVM | 131.90 | 27923.23 | 167.102454 | 
+| Random Forest | 104.54 | 17266.72 | 131.402892 |
+| XGBoost | 120.21 | 22645.94 | 150.485680 |
+| Linear Regression | 123.85 | 24221.64 | 155.633030 |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## old - ingore/achive
 | Model | accuracy | f1_weighted | precision_weighted | recall_weighted |
 | ------ | ------ | ------ | ------ | ------ |
 | Decision_Tree_00 | 0.85741 | 0.85348 | 0.87030 | 0.85741 | 
