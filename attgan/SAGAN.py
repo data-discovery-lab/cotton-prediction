@@ -223,7 +223,9 @@ class SAGAN(object):
             inputs = tf.data.Dataset.from_tensor_slices(self.data)
 
             gpu_device = '/gpu:0'
-            inputs = inputs.apply(shuffle_and_repeat(self.dataset_num)).apply(map_and_batch(Image_Data_Class.image_processing, self.batch_size, num_parallel_batches=8, drop_remainder=True)).apply(prefetch_to_device(gpu_device, self.batch_size))
+            inputs = inputs.apply(shuffle_and_repeat(self.dataset_num)) \
+                .apply(map_and_batch(Image_Data_Class.image_processing, self.batch_size, num_parallel_batches=8, drop_remainder=True)) \
+                .apply(prefetch_to_device(gpu_device, self.batch_size))
 
             inputs_iterator = inputs.make_one_shot_iterator()
 
@@ -434,7 +436,8 @@ class SAGAN(object):
             z_sample = np.random.uniform(-1, 1, size=(self.batch_size, self.z_dim))
 
             samples = self.sess.run(self.fake_images, feed_dict={self.z: z_sample})
-
+            path = result_dir + '/' + self.model_name + '_test_{}.png'.format(i)
+            print("Generating image...", path)
             save_images(samples[:image_frame_dim * image_frame_dim, :, :, :],
                         [image_frame_dim, image_frame_dim],
-                        result_dir + '/' + self.model_name + '_test_{}.png'.format(i))
+                        path)

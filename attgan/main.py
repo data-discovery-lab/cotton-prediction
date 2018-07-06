@@ -11,11 +11,11 @@ def parse_args():
     parser.add_argument('--dataset', type=str, default='celebA', help='[mnist / cifar10 / celebA]')
 
 
-    parser.add_argument('--epoch', type=int, default=10, help='The number of epochs to run')
+    parser.add_argument('--epoch', type=int, default=100, help='The number of epochs to run')
     parser.add_argument('--iteration', type=int, default=1000, help='The number of training iterations')
     parser.add_argument('--batch_size', type=int, default=64, help='The size of batch per gpu')
-    parser.add_argument('--print_freq', type=int, default=500, help='The number of image_print_freqy')
-    parser.add_argument('--save_freq', type=int, default=500, help='The number of ckpt_save_freq')
+    parser.add_argument('--print_freq', type=int, default=100, help='The number of image_print_freqy')
+    parser.add_argument('--save_freq', type=int, default=100, help='The number of ckpt_save_freq')
 
 
     parser.add_argument('--g_lr', type=float, default=0.0001, help='learning rate for generator')
@@ -24,14 +24,14 @@ def parse_args():
     parser.add_argument('--beta2', type=float, default=0.9, help='beta2 for Adam optimizer')
 
 
-    parser.add_argument('--z_dim', type=int, default=128, help='Dimension of noise vector')
+    parser.add_argument('--z_dim', type=int, default=20, help='Dimension of noise vector')
     parser.add_argument('--up_sample', type=str2bool, default=True, help='using upsample-conv')
     parser.add_argument('--sn', type=str2bool, default=True, help='using spectral norm')
     parser.add_argument('--gan_type', type=str, default='hinge', help='[gan / lsgan / wgan-gp / wgan-lp / dragan / hinge]')
     parser.add_argument('--ld', type=float, default=10.0, help='The gradient penalty lambda')
     parser.add_argument('--n_critic', type=int, default=1, help='The number of critic')
 
-    parser.add_argument('--img_size', type=int, default=128, help='The size of image')
+    parser.add_argument('--img_size', type=int, default=20, help='The size of image')
     parser.add_argument('--sample_num', type=int, default=64, help='The number of sample images')
 
 
