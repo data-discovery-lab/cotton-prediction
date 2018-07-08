@@ -4,7 +4,7 @@ from tqdm import trange
 from rec.tf.tf_utils import shuffled, get_fit
 
 import logging
-logging.basicConfig(filename='loss.log', level=logging.DEBUG)
+logging.basicConfig(filename='output/loss.log', level=logging.DEBUG)
 _log = logging.getLogger('decomp')
 
 
