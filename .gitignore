@@ -12,3 +12,5 @@ attgan/ops.pyc
 attgan/SAGAN.pyc
 rec/__pycache__/
 rec/tf/data/
+rec/tf/__pycache__/
+rec/tf/output/
